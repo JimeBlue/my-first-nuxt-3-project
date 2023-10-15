@@ -3,7 +3,11 @@
     <label v-for="(option, index) in options" :key="index">
       <input type="radio" :id="'option' + index" />
       <span>{{ option.label }}</span>
-      <img :src="`/img/${option.img}`" :alt="option.img" class="test" />
+      <img
+        :src="`/img/${option.img}`"
+        :alt="option.img.replace(/\.[^/.]+$/, '')"
+        class="w-5 h-5"
+      />
       <span v-if="option.text_one">{{ option.text_one }}</span>
       <span v-if="option.text_two">{{ option.text_two }}</span>
       <br />
