@@ -1,25 +1,27 @@
+<!-- NOTE: PricingPlan -->
+<!-- IMPORTANT: 
+- the label comes from FormKit 
+- help text comes form Formkit
+
+- this is typical vue 3
+:options="radioOptions"
+:modelValue="selectedOption"
+@input="updateSelectedOption"
+-->
 <template>
-  <!-- <div>
+  <div>
     <FormKit
       :type="pp"
       label="Select Your Pricing Plan"
       :options="radioOptions"
       help="What is the best plan for you?"
+      :modelValue="selectedOption"
+      @input="updateSelectedOption"
     />
-  </div> -->
-
-  <div>
-    <h1>Radio Group Example</h1>
-    <RadioGroup
-      :modelValue="selectedValue"
-      :options="options"
-      @update:modelValue="selectedValue = $event"
-    />
-
-    <p>Selected Value (Parent Component): {{ selectedValue }}</p>
+    Selected Value (Parent Component): {{ selectedOption }}
   </div>
 </template>
-<!-- <script setup>
+<script setup>
 import { ref } from 'vue';
 import { createInput } from '@formkit/vue';
 import PricingPlan from '~/formkit-components/PricingPlan.vue';
@@ -27,7 +29,7 @@ import PricingPlan from '~/formkit-components/PricingPlan.vue';
 const pp = createInput(PricingPlan, {
   props: ['options'],
 });
-const selectedPlan = ref(null);
+const selectedOption = ref(null);
 
 const radioOptions = ref([
   {
@@ -58,13 +60,32 @@ const radioOptions = ref([
     img: 'rocket.png',
   },
 ]);
-const selectedOption = ref(null);
-</script> -->
-<script setup>
+
+const updateSelectedOption = (value) => {
+  console.log('Received value in parent: ', value);
+  selectedOption.value = value;
+};
+</script>
+
+<!-- NOTE: RadioGroup -->
+<!-- <template>
+  <div>
+    <h1>Radio Group Example</h1>
+    <RadioGroup
+      :modelValue="selectedValue"
+      :options="options"
+      @update:modelValue="selectedValue = $event"
+    />
+
+    <p>Selected Value (Parent Component): {{ selectedValue }}</p>
+  </div>
+</template> -->
+
+<!-- <script setup>
 import { ref } from 'vue';
 import RadioGroup from '~/formkit-components/RadioGroup.vue';
 
 const selectedValue = ref(null);
 
 const options = ['Option A', 'Option B', 'Option C', 'Option D']; // Define your options here
-</script>
+</script> -->
