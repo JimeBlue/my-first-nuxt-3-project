@@ -1,14 +1,25 @@
 <template>
-  <div>
+  <!-- <div>
     <FormKit
       :type="pp"
       label="Select Your Pricing Plan"
       :options="radioOptions"
       help="What is the best plan for you?"
     />
+  </div> -->
+
+  <div>
+    <h1>Radio Group Example</h1>
+    <RadioGroup
+      :modelValue="selectedValue"
+      :options="options"
+      @update:modelValue="selectedValue = $event"
+    />
+
+    <p>Selected Value (Parent Component): {{ selectedValue }}</p>
   </div>
 </template>
-<script setup>
+<!-- <script setup>
 import { ref } from 'vue';
 import { createInput } from '@formkit/vue';
 import PricingPlan from '~/formkit-components/PricingPlan.vue';
@@ -16,6 +27,7 @@ import PricingPlan from '~/formkit-components/PricingPlan.vue';
 const pp = createInput(PricingPlan, {
   props: ['options'],
 });
+const selectedPlan = ref(null);
 
 const radioOptions = ref([
   {
@@ -47,5 +59,12 @@ const radioOptions = ref([
   },
 ]);
 const selectedOption = ref(null);
+</script> -->
+<script setup>
+import { ref } from 'vue';
+import RadioGroup from '~/formkit-components/RadioGroup.vue';
+
+const selectedValue = ref(null);
+
+const options = ['Option A', 'Option B', 'Option C', 'Option D']; // Define your options here
 </script>
-<style></style>

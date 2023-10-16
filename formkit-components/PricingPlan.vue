@@ -18,6 +18,7 @@
 <script setup>
 const props = defineProps({
   context: Object,
+  modelValue: String,
 });
 
 const options = props.context.options;
