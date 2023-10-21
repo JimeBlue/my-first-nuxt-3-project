@@ -5,15 +5,10 @@
         :type="pp"
         label="Select Your Pricing Plan"
         :options="radioOptions"
-        help="What is the best plan for you?"
         name="plan"
+        label-class="font-bold text-xl block mb-4"
       />
-      <!-- <FormKit
-        type="text"
-        label="Your username"
-        value="calypso"
-        help="Pick a username people will remember!"
-      /> -->
+
       <pre wrap> You selected{{ formValues }}</pre>
     </FormKit>
   </div>

@@ -4,6 +4,10 @@
       v-for="(option, index) in options"
       :key="option.value"
       class="flex flex-col space-y-6 shadow-md p-4 w-fit"
+      :class="{
+        'bg-blue-100 border border-gray-400':
+          props.context._value === option.value,
+      }"
     >
       <div class="flex justify-between">
         <span class="text-sm text-slate-700">{{ option.label }}</span>
