@@ -6,6 +6,7 @@
         label="Select Your Pricing Plan"
         :options="radioOptions"
         help="What is the best plan for you?"
+        name="plan"
       />
 
       <pre wrap> You selected{{ formValues }}</pre>

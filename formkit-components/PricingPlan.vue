@@ -7,7 +7,7 @@
         :value="option.value"
         @input="handleInput($event)"
         :checked="props.context._value === option.value"
-        name="pricingPlan"
+        :name="'option' + index"
       />
       <span>{{ option.label }}</span>
       <img
@@ -23,7 +23,7 @@
   </div>
 </template>
 <script setup>
-import { ref, defineProps } from 'vue';
+import { defineProps } from 'vue';
 const props = defineProps({
   context: Object,
 });
