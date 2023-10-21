@@ -3,10 +3,13 @@
     <FormKit type="form" v-model="formValues" @submit="handleSubmit">
       <FormKit
         :type="pp"
-        label="Select Your Pricing Plan"
-        :options="radioOptions"
         name="plan"
+        label="Select Your Pricing Plan*"
         label-class="font-bold text-xl block mb-4"
+        :options="radioOptions"
+        validation="required"
+        validation-label="A pricing Plan"
+        message-class="text-red-500 font-bold mt-5"
       />
 
       <pre wrap> You selected{{ formValues }}</pre>
