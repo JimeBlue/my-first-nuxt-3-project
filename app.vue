@@ -8,7 +8,12 @@
         help="What is the best plan for you?"
         name="plan"
       />
-
+      <!-- <FormKit
+        type="text"
+        label="Your username"
+        value="calypso"
+        help="Pick a username people will remember!"
+      /> -->
       <pre wrap> You selected{{ formValues }}</pre>
     </FormKit>
   </div>
@@ -27,28 +32,33 @@ const radioOptions = ref([
   {
     label: '10 Downloads',
     value: '10 downloads',
-    text_one: '$150/m',
-    text_two: 'Save 10% if paid annually',
+    text_one: '$150/<small>m</small>',
+    text_two: 'Save 10%',
+    text_three: 'if paid annually',
     img: 'send.png',
   },
   {
     label: '30 Downloads',
     value: '30 downloads',
-    text_one: '$350/m',
-    text_two: 'Save 10% if paid annually',
+    text_one: '$350/<small>m</small>',
+    text_two: 'Save 10%',
+    text_three: 'if paid annually',
     img: 'plane.png',
   },
   {
     label: '50 Downloads',
     value: '50 downloads',
-    text_one: '$550/m',
+    text_one: '$550/<small>m</small>',
+    text_two: 'Save 10%',
+    text_three: 'if paid annually',
     img: 'plane-toy.png',
   },
   {
     label: 'Unlimited',
     value: 'unlimited',
-    text_one: 'text4',
-    text_two: 'Save 10% if paid annually',
+    text_one: '$950/<small>m</small>',
+    text_two: 'Save 10%',
+    text_three: 'if paid annually',
     img: 'rocket.png',
   },
 ]);
