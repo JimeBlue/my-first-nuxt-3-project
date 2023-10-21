@@ -1,6 +1,6 @@
 <template>
   <div>
-    <FormKit type="form" v-model="values">
+    <FormKit type="form" v-model="formValues" @submit="handleSubmit">
       <FormKit
         :type="pp"
         label="Select Your Pricing Plan"
@@ -8,7 +8,7 @@
         help="What is the best plan for you?"
       />
 
-      <pre wrap>{{ values }}</pre>
+      <pre wrap> You selected{{ formValues }}</pre>
     </FormKit>
   </div>
 </template>
@@ -17,7 +17,7 @@ import { ref } from 'vue';
 import { createInput } from '@formkit/vue';
 import PricingPlan from '~/formkit-components/PricingPlan.vue';
 
-const values = ref({});
+const formValues = ref({ plan: '' });
 const pp = createInput(PricingPlan, {
   props: ['options'],
 });
@@ -51,4 +51,9 @@ const radioOptions = ref([
     img: 'rocket.png',
   },
 ]);
+
+async function handleSubmit(data) {
+  await wait(3000);
+  console.log(data);
+}
 </script>
