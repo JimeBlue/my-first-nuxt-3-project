@@ -1,6 +1,13 @@
 <template>
   <div>
-    <FormKit type="form" v-model="formValues" @submit="handleSubmit">
+    <FormKit
+      type="form"
+      v-model="formValues"
+      @submit="handleSubmit"
+      submit-label="Submit yor plan"
+      incomplete-message="⚠️ Please fill in all required fields."
+      message-class="text-red-500 font-bold"
+    >
       <FormKit
         :type="pp"
         name="plan"
@@ -66,3 +73,9 @@ async function handleSubmit(data) {
   console.log(data);
 }
 </script>
+<style scoped>
+.test {
+  width: 20px;
+  height: 20px;
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col lg:flex-row lg:space-x-6">
+  <div class="flex flex-col space-y-4 lg:flex-row lg:space-y-0 lg:space-x-6">
     <label
       v-for="(option, index) in options"
       :key="option.value"
@@ -73,8 +73,12 @@ function handleInput(e) {
 }
 </script>
 <style scoped>
-.test {
+/* .test {
   width: 20px;
   height: 20px;
+} */
+/* NOTE: improve it to a dynamic class or have it tailwind and in the custom theme */
+[data-invalid] label {
+  border: 5px solid red;
 }
 </style>
