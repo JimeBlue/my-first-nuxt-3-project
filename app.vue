@@ -8,8 +8,8 @@
       :submit-label="submitLabel"
       :submit-attrs="{
         inputClass: isSubmitting
-          ? 'bg-gray-500 border border-gray-500 text-white font-bold p-4 rounded-md opacity-70 cursor-not-allowed'
-          : 'bg-blue-500 border border-blue-500 text-white font-bold p-4 rounded-md hover:opacity-80',
+          ? 'bg-gray-500 border border-gray-500 text-white font-bold p-4 rounded-md opacity-70 cursor-not-allowed mt-10'
+          : 'bg-blue-500 border border-blue-500 text-white font-bold p-4 rounded-md hover:opacity-80 mt-10',
       }"
       incomplete-message="⚠️ Please fill in all required fields."
       message-class="text-red-500 font-bold"
