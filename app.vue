@@ -4,7 +4,12 @@
       type="form"
       v-model="formValues"
       @submit="handleSubmit"
-      submit-label="Submit yor plan"
+      :submit-label="submitLabel"
+      :submit-attrs="{
+        inputClass: isSubmitting
+          ? 'bg-gray-500 border border-gray-500 text-white font-bold p-4 rounded-md opacity-70 cursor-not-allowed'
+          : 'bg-blue-500 border border-blue-500 text-white font-bold p-4 rounded-md hover:opacity-80',
+      }"
       incomplete-message="⚠️ Please fill in all required fields."
       message-class="text-red-500 font-bold"
     >
@@ -28,10 +33,11 @@ import { ref } from 'vue';
 import { createInput } from '@formkit/vue';
 import PricingPlan from '~/formkit-components/PricingPlan.vue';
 
-const formValues = ref({ plan: '' });
 const pp = createInput(PricingPlan, {
   props: ['options'],
 });
+
+const formValues = ref({ plan: '' });
 
 const radioOptions = ref([
   {
@@ -68,9 +74,16 @@ const radioOptions = ref([
   },
 ]);
 
+const submitLabel = computed(() =>
+  isSubmitting.value ? '⏳ Submitting...' : 'Submit your plan',
+);
+
+const isSubmitting = ref(false);
 async function handleSubmit(data) {
+  isSubmitting.value = true;
   await wait(3000);
   console.log(data);
+  isSubmitting.value = false;
 }
 </script>
 <style scoped>
