@@ -1,6 +1,7 @@
 <template>
-  <div>
+  <div class="flex justify-start lg:justify-center items-center ml-10 lg:ml-0">
     <FormKit
+      v-if="!submitted"
       type="form"
       v-model="formValues"
       @submit="handleSubmit"
@@ -24,8 +25,14 @@
         message-class="text-red-500 font-bold mt-5"
       />
 
-      <pre wrap> You selected{{ formValues }}</pre>
+      <!-- <pre wrap> You selected{{ formValues }}</pre> -->
     </FormKit>
+    <section v-if="submitted" class="w-fit mx-auto space-y-2 mt-10">
+      <h2 class="text-xl font-bold text-green-600">
+        🙌 Submission successful!
+      </h2>
+      <p>Thank you for choosing the {{ formValues.plan }} pricing plan.</p>
+    </section>
   </div>
 </template>
 <script setup>
@@ -79,11 +86,14 @@ const submitLabel = computed(() =>
 );
 
 const isSubmitting = ref(false);
+const submitted = ref(false);
+
 async function handleSubmit(data) {
   isSubmitting.value = true;
-  await wait(3000);
+  await wait(2000);
   console.log(data);
   isSubmitting.value = false;
+  submitted.value = true;
 }
 </script>
 <style scoped>
