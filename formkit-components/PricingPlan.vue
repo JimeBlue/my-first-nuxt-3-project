@@ -68,7 +68,7 @@ const props = defineProps({
 const options = props.context.options;
 
 function handleInput(e) {
-  // NOTE: FormKit is taking care of emitting value
+  // NOTE: FormKit is taking care of emitting the value
   props.context.node.input(e.target.value);
 }
 </script>
@@ -77,7 +77,7 @@ function handleInput(e) {
   width: 20px;
   height: 20px;
 } */
-/* NOTE: improve it to a dynamic class or have it tailwind and in the custom theme */
+/* NOTE: improve it to a dynamic class or have it in tailwind and in the custom theme */
 [data-invalid] label {
   border: 5px solid red;
 }
