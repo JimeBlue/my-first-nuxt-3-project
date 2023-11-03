@@ -30,7 +30,7 @@
     </FormKit>
     <section v-if="submitted" class="w-fit mx-auto space-y-2 mt-10">
       <h2 class="text-xl font-bold text-green-600">
-        🙌 Submission successful!
+        🙌 Submission issuccessful new message {{ formValues.plan }}!
       </h2>
       <p>Thank you for choosing the {{ formValues.plan }} pricing plan.</p>
       <p>Lorem ipsum dolor sit amet.</p>
