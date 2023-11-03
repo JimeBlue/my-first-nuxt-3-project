@@ -14,6 +14,7 @@
       incomplete-message="⚠️ Please fill in all required fields."
       message-class="text-red-500 font-bold"
     >
+      <p>testing merging diverged banches</p>
       <FormKit
         :type="pp"
         name="plan"
