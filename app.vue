@@ -32,6 +32,7 @@
         🙌 Submission successful!
       </h2>
       <p>Thank you for choosing the {{ formValues.plan }} pricing plan.</p>
+      <p>Lorem ipsum dolor sit amet.</p>
     </section>
   </div>
 </template>
