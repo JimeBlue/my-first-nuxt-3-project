@@ -14,7 +14,7 @@
       incomplete-message="⚠️ Please fill in all required fields."
       message-class="text-red-500 font-bold"
     >
-      <p>testing merging diverged banches</p>
+      <!-- <p>testing merging diverged banches</p> -->
       <FormKit
         :type="pp"
         name="plan"
@@ -28,7 +28,10 @@
 
       <!-- <pre wrap> You selected{{ formValues }}</pre> -->
     </FormKit>
-    <section v-if="submitted" class="w-fit mx-auto space-y-2 mt-10">
+    <section
+      v-if="submitted && testValue"
+      class="w-fit mx-auto space-y-2 mt-10"
+    >
       <h2 class="text-xl font-bold text-green-600">
         🙌 Submission successful!
       </h2>
@@ -46,6 +49,7 @@ const pp = createInput(PricingPlan, {
 });
 
 const formValues = ref({ plan: '' });
+const testValue = ref(true);
 
 const radioOptions = ref([
   {
